@@ -1,0 +1,23 @@
+﻿@*Making this an IEnemerable tells the view we are accepting multiple numbers of the model - no just one*@
+
+@model  IEnumerable<MVCMusicStore.Models.Genre>
+
+@{
+    ViewBag.Title = "Store";
+}
+<br />
+<br />
+<h2>Browse Genre's</h2>
+<br />
+<p>Select from @Model.Count() genres:</p>
+
+<ul>
+    @foreach (var genre in Model)
+    {
+        <li>
+            @*The first parameter is the link text, and the second parameter is the name of the controller action*@
+            @Html.ActionLink(genre.Name, "Browse", new { genre = genre.Name })
+        </li>
+    }
+</ul>
+
