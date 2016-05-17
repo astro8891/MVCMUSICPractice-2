@@ -15,7 +15,7 @@
     @foreach (var genre in Model)
     {
         <li>
-            @*The first parameter is the link text, and the second parameter is the name of the controller action*@
+            @*The first parameter is the link text, and the second parameter is the name of the controller action, the parameter after that is what we are passing to the controller*@
             @Html.ActionLink(genre.Name, "Browse", new { genre = genre.Name })
         </li>
     }
