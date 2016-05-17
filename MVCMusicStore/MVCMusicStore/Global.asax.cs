@@ -12,7 +12,6 @@ namespace MVCMusicStore
     {
         protected void Application_Start()
         {
-            //Lets the application know about our seed method
             System.Data.Entity.Database.SetInitializer(new MvcMusicStore.Models.SampleData());
 
             AreaRegistration.RegisterAllAreas();
