@@ -7,3 +7,12 @@
 <br />
 <h2>Browsing Genre: @Model.Name</h2>
 
+<ul>
+    @foreach (var x in Model.Albums)
+    {
+        <li>
+            @Html.ActionLink(x.Title, "Details", new { id = x.AlbumId })
+        </li>
+    }
+</ul>
+
