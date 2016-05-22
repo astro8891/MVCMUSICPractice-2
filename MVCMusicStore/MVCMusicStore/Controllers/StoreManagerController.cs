@@ -94,6 +94,8 @@ namespace MVCMusicStore.Controllers
             //The model is validated with a simple call to ModelState.IsValid
             if (ModelState.IsValid)
             {
+                // instead of adding a new album to the db.Albums collection, 
+                // we’re finding the current instance of the Album using db.Entry(album) and setting its state to Modified. This tells Entity Framework that we are modifying an existing album as opposed to creating a new one.
                 db.Entry(album).State = EntityState.Modified;
                 db.SaveChanges();
                 //After saving the data, we redirect back to the list of Albums so we can see our update.
