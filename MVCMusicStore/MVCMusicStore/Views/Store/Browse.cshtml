@@ -11,6 +11,7 @@
     @foreach (var x in Model.Albums)
     {
         <li>
+            @*The first parameter is the link text, and the second parameter is the name of the controller action, the parameter after that is what we are passing to the controller*@
             @Html.ActionLink(x.Title, "Details", new { id = x.AlbumId })
         </li>
     }
